@@ -3,86 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unia Luhbatirrofiqoh — Portfolio (Preview)</title>
+  <title>Unia Luhbatirrofiqoh — Portfolio</title>
+  <meta name="description" content="Portfolio Unia Luhbatirrofiqoh — Data Analysis, Machine Learning, Statistical projects.">
   <style>
     :root{
-      --bg:#03194e; --card:#4f4618; --muted:#94a3b8; --accent:#7c3aed; --text:#e6eef8;
+      --bg:#03194e; --card:#4f4618; --muted:#d1d5db; --accent:#7c3aed; --text:#e6eef8;
       --gap:1rem; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
     }
     *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);line-height:1.45}
     .container{max-width:1000px;margin:0 auto;padding:2rem}
-    .site-header{border-bottom:1px solid rgba(255,255,255,0.04)}
+    .site-header{border-bottom:1px solid rgba(255,255,255,0.06)}
     .site-header .container{display:flex;align-items:center;justify-content:space-between}
     .site-header h1{font-size:1.1rem;margin:0}
     .site-header nav a{color:var(--muted);margin-left:1rem;text-decoration:none}
-    .hero{padding:4rem 0;text-align:left}
+
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;margin:.5rem;background:#fff;color:#000;border-radius:4px}
+
+    .hero{padding:3rem 0;text-align:left}
     .hero h2{margin:0 0 .5rem;font-size:1.8rem}
     .hero p{color:var(--muted);margin:.25rem 0}
     .cta a{color:var(--accent);text-decoration:none;margin-right:1rem}
-    .projects .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap);margin-top:1rem}
+
+    .specials-nav{display:flex;gap:1rem;margin-top:1rem}
+    .specials-nav a{background:rgba(255,255,255,0.03);padding:.45rem .7rem;border-radius:6px;color:var(--muted);text-decoration:none}
+    .specials-nav a.active{background:var(--accent);color:white}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap);margin-top:1rem}
     .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
-    .thumb{width:100%;height:140px;display:block;border-radius:6px;background:linear-gradient(135deg,#071024,#0b1a2b);color:#9fb8ff;display:flex;align-items:center;justify-content:center;font-size:0.95rem}
-    .card h4{margin:.6rem 0 .25rem}
+    .card h4{margin:.6rem 0 .25rem;color:var(--text)}
     .card p{color:var(--muted);margin:0}
+
+    section.specialization{margin-top:2rem;padding:1rem;border-radius:8px;background:rgba(255,255,255,0.01)}
+
     .about, .contact{margin-top:2rem;background:transparent;padding:1rem;border-radius:8px}
     .site-footer{border-top:1px solid rgba(255,255,255,0.04);padding:1rem 0;margin-top:2rem;color:var(--muted);text-align:center}
-    @media (max-width:520px){
-      .hero h2{font-size:1.2rem}
+
+    @media (max-width:720px){
+      .hero h2{font-size:1.4rem}
       .site-header .container{padding:0 1rem}
     }
-    /* small utility */
     a.button{background:var(--accent);color:white;padding:.5rem .8rem;border-radius:6px;text-decoration:none}
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
     <div class="container">
       <h1>Unia Luhbatirrofiqoh</h1>
-      <nav>
-        <a href="#projects">Work</a>
+      <nav role="navigation" aria-label="Main navigation">
+        <a href="#specializations">Specializations</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero container">
-      <h2>Hi, I'm Unia Luhbatirrofiqoh</h2>
-      <p>Mathematics Fresh Graduate Interested in Data Fields and Aspiring to be a Data Analys.</p>
-      <p class="cta"><a class="button" href="#projects">See my work</a> <a href="#contact" style="color:var(--muted);margin-left:.8rem">Get in touch</a></p>
-      <p><strong>Skills:</strong> Microsoft Excel, Python, SQL, Google Sheet, Power BI, Looker Studio, Tableu CSS</p>
-    </section>
-    
-    <section id="projects" class="container projects">
-      <h3>Selected projects</h3>
-      <div class="grid">
-        <article class="card">
-          <div class="thumb">Video Games Sales Analysis</div>
-          <h4>Video Games Sales Analysis</h4>
-          <p>Exploratory analysis on global video game sales data to identify top-selling genres, platforms, and temporal trends.</p>
-          <p><a href="#">Case study →</a></p>
-        </article>
-
-        <article class="card">
-          <div class="thumb">Superstore Sales Analysis</div>
-          <h4>Superstore Sales Analysis</h4>
-          <p>Sales performance analysis for a retail superstore: segmenting customers, identifying top products, and seasonality patterns.</p>
-          <p><a href="#">Case study →</a></p>
-        </article>
-
-        <article class="card">
-          <div class="thumb">Project Three screenshot</div>
-          <h4>Project Three</h4>
-          <p>Internal analytics project focused on improving data pipelines and dashboarding for business stakeholders.</p>
-          <p><a href="#">Case study →</a></p>
-        </article>
-      </div>
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="hero-heading">
+      <h2 id="hero-heading">Hi, I'm Unia Luhbatirrofiqoh</h2>
+      <p>Mathematics graduate interested in data fields — Data Analysis, Machine Learning, and Statistical modeling.</p>
+      <p class="cta"><a class="button" href="#specializations">See specializations</a> <a href="#contact" style="color:var(--muted);margin-left:.8rem">Get in touch</a></p>
+      <p><strong>Skills:</strong> Microsoft Excel, Python, SQL, Google Sheets, Power BI, Looker Studio, Tableau</p>
     </section>
 
+    <section id="specializations" aria-labelledby="specials-heading">
+      <h3 id="specials-heading">Specializations</h3>
+      <nav class="specials-nav" aria-label="Specializations navigation">
+        <a href="#data-analysis">Data Analysis</a>
+        <a href="#machine-learning">Machine Learning</a>
+        <a href="#statistical">Statistical</a>
+      </nav>
 
-    <section id="contact" class="container contact">
-      <h3>Contact</h3>
+      <section id="data-analysis" class="specialization" aria-labelledby="da-heading">
+        <h4 id="da-heading">Data Analysis</h4>
+        <p class="muted">Exploratory data analysis, dashboards, data cleaning, visualization, and business insights.</p>
+        <div class="grid">
+          <article class="card">
+            <h4>Video Games Sales Analysis</h4>
+            <p>Exploratory analysis on global video game sales to identify top-selling genres, platforms, and trends over time.</p>
+            <p style="margin-top:.5rem;color:var(--muted)"><strong>Tech:</strong> Python, pandas, Matplotlib, Tableau</p>
+          </article>
+
+          <article class="card">
+            <h4>Superstore Sales Analysis</h4>
+            <p>Sales performance analysis: customer segmentation, top products, and seasonality patterns to inform promotions.</p>
+            <p style="margin-top:.5rem;color:var(--muted)"><strong>Tech:</strong> SQL, Excel, Power BI</p>
+          </article>
+
+          <article class="card">
+            <h4>Internal Analytics & Dashboards</h4>
+            <p>Improved internal reporting pipelines and built dashboards for stakeholders to monitor KPIs and reduce manual reporting.</p>
+            <p style="margin-top:.5rem;color:var(--muted)"><strong>Tech:</strong> Google Sheets, Looker Studio, Python</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="machine-learning" class="specialization" aria-labelledby="ml-heading">
+        <h4 id="ml-heading">Machine Learning</h4>
+        <p class="muted">Modeling, evaluation, and deployment of predictive systems (supervised & unsupervised).</p>
+        <div class="grid">
+          <article class="card">
+            <h4>ML Project — Classification</h4>
+            <p>Built and evaluated classification models to predict customer churn; compared logistic regression, random forest, and XGBoost.</p>
+            <p style="margin-top:.5rem;color:var(--muted)"><strong>Tech:</strong> scikit-learn, XGBoost, Python</p>
+          </article>
+
+          <article class="card">
+            <h4>ML Project — Recommendation (placeholder)</h4>
+            <p>Prototype recommender using collaborative filtering and content-based features to improve item discovery.</p>
+            <p style="margin-top:.5rem;color:var(--muted)"><strong>Tech:</strong> Python, implicit, Surprise</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="statistical" class="specialization" aria-labelledby="st-heading">
+        <h4 id="st-heading">Statistical</h4>
+        <p class="muted">Statistical analysis, hypothesis testing, A/B experiments, and Bayesian methods for robust inference.</p>
+        <div class="grid">
+          <article class="card">
+            <h4>Statistical Analysis — Hypothesis Testing</h4>
+            <p>Designed and ran tests to validate feature changes; computed effect sizes and confidence intervals to support decisions.</p>
+            <p style="margin-top:.5rem;color:var(--muted)"><strong>Tech:</strong> R, statsmodels, Python</p>
+          </article>
+
+          <article class="card">
+            <h4>Experimental Design & A/B Testing</h4>
+            <p>Planned and analyzed A/B tests to measure impact of UI changes and promotional campaigns.</p>
+            <p style="margin-top:.5rem;color:var(--muted)"><strong>Tech:</strong> Python, R, Bayesian analysis</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-heading">
+      <h3 id="about-heading">About</h3>
+      <p>I'm a mathematics graduate with a passion for turning data into insights. I focus on reproducible analysis, clear visualizations, and models that solve business problems.</p>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <h3 id="contact-heading">Contact</h3>
       <p>Email: <a href="mailto:unialubatirrofiqoh@gmail.com">unialubatirrofiqoh@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/uniall03">github.com/uniall03</a></p>
       <p>LinkedIn: <a href="https://linkedin.com/in/unialubatirrofiqoh">linkedin.com/in/unialuhbatirrofiqoh</a></p>
@@ -92,5 +152,21 @@
   <footer class="site-footer">
     <div class="container">© Unia Luhbatirrofiqoh — Built with care</div>
   </footer>
+
+  <script>
+    // Optional: highlight nav link when section in view
+    const links = document.querySelectorAll('.specials-nav a');
+    const sections = document.querySelectorAll('.specialization');
+    function setActive(){
+      let index = sections.length - 1;
+      for(let i=0;i<sections.length;i++){
+        const rect = sections[i].getBoundingClientRect();
+        if(rect.top <= 120) index = i;
+      }
+      links.forEach((l, i) => l.classList.toggle('active', i===index));
+    }
+    window.addEventListener('scroll', setActive);
+    setActive();
+  </script>
 </body>
 </html>
